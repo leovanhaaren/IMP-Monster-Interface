@@ -1,0 +1,23 @@
+html, body { width: 100%; height: 100%; background: url('../img/background3.jpg'); background-size: cover; }
+
+	a, a:hover { text-decoration: none; }
+	h1 { font-family: 'Racing Sans One', cursive; color: #333333; font-size: 100px!important; }
+	h2 { font-family: 'Racing Sans One', cursive; color: #333333; font-size: 24px; }
+	p { font-family: ' Open Sans', sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; }
+
+	#view-wrapper { height: 100%; }
+	#wrap { min-height: 100%; height: auto!important; margin: 0 auto -100px; padding-bottom: 110px; }
+		.jumbotron { margin: 30px 0 100px; background: rgba(255,255,255,0.7); }
+			
+	.gameGrid { margin-bottom: 50px; }
+		.gameGrid a { background: rgba(255,255,255,0.7); border-radius: 5px; display: inline-block; padding: 20px 10px 10px; }
+			.gameGrid img { border: 2px solid #333333; border-radius: 5px; width: 220px; height: 220px; }
+		
+	.content { background: rgba(255,255,255,0.7); border-radius: 5px; padding-top: 25px; padding-bottom: 25px; }
+	
+	#footer { height: 100px; background: rgba(255,255,255,0.7); border-top: 2px solid #333333; }
+		#footer .btn { margin-top: 25px; }
+	
+	
+	#uitleg-screens img { margin: 15px; }
+	

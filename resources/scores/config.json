@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"gameID": {
+			"name": "gameID",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "gameID",
+			"order": 0
+		},
+		"username": {
+			"name": "username",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "username",
+			"order": 1
+		},
+		"score": {
+			"name": "score",
+			"type": "number",
+			"typeLabel": "number",
+			"required": true,
+			"id": "score",
+			"order": 2
+		}
+	}
+}

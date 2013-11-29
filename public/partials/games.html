@@ -1,0 +1,25 @@
+<div id="wrap">
+	<div class="container">
+		<div class="row text-center jumbotron" id="jumbotron-home">
+			<h1>GAMERAMP</h1>
+			<p>
+				Klik op een game in de onderstaande lijst om de instructies te lezen en het spel te starten!
+			</p>
+		</div>
+		<div class="row text-center">
+			<div class="gameGrid col-md-4 col-sm-4" data-ng-repeat="game in games">
+				<a href="" data-ng-click="goToGame(game.id, game.name)" class="col-md-12">
+					<img src="http://www.gameramp.nl/dynamic/thumb/{{ game.id }}.png" />
+					<h2>{{ game.name }}</h2>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<div class="col-md-4 col-md-offset-4">
+			<a href="" class="btn btn-success btn-block" id="go_fullscreen">Go Fullscreen</a>
+		</div>
+	</div>
+</div>

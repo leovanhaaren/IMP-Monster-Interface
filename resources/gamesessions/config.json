@@ -1,0 +1,53 @@
+{
+	"type": "Collection",
+	"properties": {
+		"gameID": {
+			"name": "gameID",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "gameID",
+			"order": 0
+		},
+		"player": {
+			"name": "player",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "player",
+			"order": 1
+		},
+		"score": {
+			"name": "score",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "score",
+			"order": 2
+		},
+		"timestart": {
+			"name": "timestart",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "timestart",
+			"order": 3
+		},
+		"timeend": {
+			"name": "timeend",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "timeend",
+			"order": 4
+		},
+		"state": {
+			"name": "state",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "state",
+			"order": 5
+		}
+	}
+}

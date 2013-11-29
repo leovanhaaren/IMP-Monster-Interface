@@ -1,0 +1,27 @@
+<div id="wrap">
+	<div class="container">
+		<div class="row text-center jumbotron">
+			<h1>{{ currentGameName }}</h1>
+		</div>
+		<div class="row content">
+			<div class="col-md-8 col-sm-8">
+				<p>
+					{{ game.desc }}
+				</p>
+				<div id="uitleg-screens" class="text-center">
+                    <img ng-src="{{ image }}" ng-repeat="image in game.images.descImages" />
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<a href="/#/inprogress" class="btn btn-success btn-block" data-ng-click="startGame()">Spel starten</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<div class="col-md-4 col-md-offset-4">
+			<a href="/#/games" class="btn btn-warning btn-block">Ga terug</a>
+		</div>
+	</div>
+</div>
