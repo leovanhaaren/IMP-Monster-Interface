@@ -9,12 +9,12 @@
 			"id": "gameID",
 			"order": 0
 		},
-		"player": {
-			"name": "player",
+		"winner": {
+			"name": "winner",
 			"type": "string",
 			"typeLabel": "string",
 			"required": false,
-			"id": "player",
+			"id": "winner",
 			"order": 1
 		},
 		"score": {

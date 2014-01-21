@@ -1,0 +1,13 @@
+{
+	"type": "Collection",
+	"properties": {
+		"state": {
+			"name": "state",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "state",
+			"order": 0
+		}
+	}
+}

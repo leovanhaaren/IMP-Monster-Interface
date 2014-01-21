@@ -1,4 +1,4 @@
-var interfaceApp = angular.module('interfaceApp', ['ngRoute']);
+var interfaceApp = angular.module('interfaceApp', ['ngRoute', 'ngSanitize']);
 
 interfaceApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/games', {templateUrl: 'partials/games.html', controller: 'gamesController'});

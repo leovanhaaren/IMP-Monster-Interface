@@ -7,6 +7,10 @@ interfaceApp.factory('gameFactory', function($http, $rootScope) {
 		getGame: function(result)
 		{
 			$http.get($rootScope.hostURL+'/games/'+$rootScope.currentGameID).success(result);
+		},
+		getPrototypeState: function(result)
+		{
+			$http.get($rootScope.hostURL+'/prototype').success(result);
 		}
 	};
 });

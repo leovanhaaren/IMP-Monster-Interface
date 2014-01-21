@@ -1,21 +1,30 @@
 <div id="wrap">
 	<div class="container">
-		<div class="row text-center jumbotron">
+		<div class="row text-center jumbotron" style="background: url({{ game.images.headerImage }});">
 			<h1>{{ currentGameName }}</h1>
 		</div>
-		<div class="row content">
-			<div class="col-md-8 col-sm-8">
-				<p>
-					{{ game.desc }}
-				</p>
-				<div id="uitleg-screens" class="text-center">
-                    <img ng-src="{{ image }}" ng-repeat="image in game.images.descImages" />
-				</div>
-			</div>
-			<div class="col-md-4 col-sm-4">
-				<a href="/#/inprogress" class="btn btn-success btn-block" data-ng-click="startGame()">Spel starten</a>
-			</div>
-		</div>
+        <div class="col-md-12 col-sm-12 content">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <p data-ng-bind-html="game.desc">
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div id="uitleg-screens" class="text-center">
+                        <img ng-src="{{ image }}" ng-repeat="image in game.images.descImages" />
+                    </div>
+                    <div class="text-center" data-ng-bind-html="game.video">
+                    </div>
+                </div>
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <a href="/#/inprogress" class="btn btn-success btn-block" data-ng-disabled="prototypeState != 'idle'" data-ng-show="game.active" data-ng-click="startGame()">Spel starten</a>
+                    <p data-ng-hide="game.active"><strong>Deze game is momenteel niet te spelen!</strong></p>
+                </div>
+            </div>
+        </div>
 	</div>
 </div>
 <div id="footer">

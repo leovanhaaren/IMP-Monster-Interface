@@ -1,20 +1,24 @@
 <div id="wrap">
 	<div class="container">
-		<div class="row text-center jumbotron">
+		<div class="row text-center jumbotron" style="background: url({{ game.images.headerImage }});">
 			<h1>{{ currentGameName }}</h1>
-			<p>
-				Het spel is voorbij! Voer hieronder je naam in om je score op te slaan.
-			</p>
 		</div>
 		<div class="row content">
-			<div class="col-md-4 col-md-offset-4 text-center">
+			<div class="col-md-4 col-md-offset-4 text-center" data-ng-show="game.conditions.multiplayer">
+                <p class="score-view">
+                    Winnaar: {{ winner }}
+                </p>
+            </div>
+			<div class="col-md-4 col-md-offset-4 text-center" data-ng-hide="game.conditions.multiplayer">
 				<div class="form-group">
-                	<p>
+                	<p class="score-view">
                     	Score: {{ lastScore }}
                     </p>
-					<input type="text" class="form-control" data-ng-model="newScore.username" data-ng-hide="newScoreAdded" placeholder="Nickname" />
-					<br />
-					<a href="/#/gameover" class="btn btn-success btn-block" data-ng-click="setScore()" data-ng-hide="newScoreAdded">Invoeren</a>
+                    <form name="scoreForm">
+                        <input type="text" class="form-control" data-ng-model="newScore.username" data-ng-hide="newScoreAdded" required placeholder="Nickname" />
+                        <br />
+                        <button class="btn btn-success btn-block" ng-disabled="scoreForm.$invalid" data-ng-click="setScore()" data-ng-hide="newScoreAdded">Score opslaan</button>
+					</form>
 				</div>
 				<div class="alert alert-success" data-ng-show="newScoreAdded">
 					Je score is verstuurd!
@@ -27,13 +31,13 @@
 					</tr>
 					<tr data-ng-repeat="score in scores | orderBy: 'score':true | limitTo: 5">
 						<td>{{ $index+1 }}</td>
-						<td>{{ score.username }}</td>
+						<td style="text-transform: capitalize;">{{ score.username }}</td>
 						<td>{{ score.score }}</td>
 					</tr>
 				</table>
-				<a href="/#/inprogress" class="btn btn-primary btn-block" data-ng-click="startGame('testGame', ' testPlayer')">Speel opnieuw</a>
-			</div>
-		</div>
+				<!--<a href="/#/inprogress" class="btn btn-primary btn-block" data-ng-click="startGame()">Speel opnieuw</a>-->
+            </div>
+        </div>
 	</div>
 </div>
 <div id="footer">

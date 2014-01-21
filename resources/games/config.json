@@ -9,13 +9,29 @@
 			"id": "name",
 			"order": 0
 		},
+		"version": {
+			"name": "version",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "version",
+			"order": 1
+		},
+		"prototype": {
+			"name": "prototype",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "prototype",
+			"order": 2
+		},
 		"desc": {
 			"name": "desc",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
 			"id": "desc",
-			"order": 1
+			"order": 3
 		},
 		"images": {
 			"name": "images",
@@ -23,7 +39,15 @@
 			"typeLabel": "object",
 			"required": false,
 			"id": "images",
-			"order": 2
+			"order": 4
+		},
+		"video": {
+			"name": "video",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "video",
+			"order": 5
 		},
 		"countdown": {
 			"name": "countdown",
@@ -31,7 +55,7 @@
 			"typeLabel": "number",
 			"required": true,
 			"id": "countdown",
-			"order": 3
+			"order": 6
 		},
 		"cooldown": {
 			"name": "cooldown",
@@ -39,7 +63,7 @@
 			"typeLabel": "string",
 			"required": true,
 			"id": "cooldown",
-			"order": 4
+			"order": 7
 		},
 		"reset": {
 			"name": "reset",
@@ -47,7 +71,7 @@
 			"typeLabel": "number",
 			"required": true,
 			"id": "reset",
-			"order": 5
+			"order": 8
 		},
 		"remote": {
 			"name": "remote",
@@ -55,7 +79,7 @@
 			"typeLabel": "boolean",
 			"required": false,
 			"id": "remote",
-			"order": 6
+			"order": 9
 		},
 		"conditions": {
 			"name": "conditions",
@@ -63,7 +87,15 @@
 			"typeLabel": "object",
 			"required": true,
 			"id": "conditions",
-			"order": 7
+			"order": 10
+		},
+		"active": {
+			"name": "active",
+			"type": "boolean",
+			"typeLabel": "boolean",
+			"required": false,
+			"id": "active",
+			"order": 11
 		}
 	}
 }

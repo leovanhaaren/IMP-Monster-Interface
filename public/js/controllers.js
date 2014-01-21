@@ -2,9 +2,7 @@ var controllers = {};
 
 controllers.gamesController = function($scope, $rootScope, $http, $routeParams, $location, gameFactory)
 {
-	$rootScope.hostURL = 'http://162.243.11.151:2403';
-	$rootScope.lastScore = 0;
-	
+	$rootScope.hostURL = 'http://teammonster.nl';
 	gameFactory.getGames(function(results)
 	{
 		$scope.games = results;
@@ -22,14 +20,27 @@ controllers.gameController = function($scope, $rootScope, $http, $routeParams, $
 {
 	gameFactory.getGame(function(result)
 	{
-		$scope.game = result;
+		$rootScope.game = result;
 	});
+    
+    gameFactory.getPrototypeState(function(result)
+    {
+        $rootScope.prototypeState = result[0].state;
+    });
+    
+    dpd.on('prototype:state', function(result)
+    {
+        $scope.$apply(function()
+		{
+			$rootScope.prototypeState = result.state;
+		});
+    });
 
 	$scope.startGame = function()
 	{
 		var date = new Date();
 		time = date.getTime();
-    	dpd.gamesessions.post({gameID: $rootScope.currentGameID, gameName: $rootScope.currentGameName, player: 'player' , timestart: time, state: 'started'}, function(result, error)
+    	dpd.gamesessions.post({gameID: $rootScope.currentGameID, gameName: $rootScope.currentGameName, player: 'player' , timestart: time, active: true}, function(result, error)
 		{
 			if(!error)
 			{
@@ -45,20 +56,13 @@ controllers.gameController = function($scope, $rootScope, $http, $routeParams, $
 
 controllers.progressController = function($scope, $rootScope, $location)
 {
+	$rootScope.lastScore = 0;
+    $rootScope.winner = 'niemand';
+    
 	dpd.on('session:end', function(session)
 	{
 		$rootScope.lastScore = session.score;
-		console.log($rootScope.lastScore);
-		$scope.$apply(function()
-		{
-			$location.path('gameover');
-		});
-	});
-	
-	dpd.on('session:cancelled', function(session)
-	{
-		$rootScope.lastScore = session.score;
-		console.log($rootScope.lastScore);
+        $rootScope.winner = session.winner;
 		$scope.$apply(function()
 		{
 			$location.path('gameover');
@@ -93,7 +97,7 @@ controllers.gameoverController = function($scope, $rootScope, $http)
 	
 	$scope.setScore = function()
 	{
-		dpd.scores.post({gameID: $rootScope.currentGameID, username: $scope.newScore.username, score: $rootScope.lastScore}, function(score, error)
+		dpd.scores.post({gameID: $rootScope.currentGameID, username: $scope.newScore.username.toLowerCase(), score: $rootScope.lastScore}, function(score, error)
 		{
 			if(!error)
 			{

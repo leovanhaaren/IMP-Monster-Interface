@@ -24,7 +24,7 @@ controllers.gameController = function($scope, $rootScope, $http, $routeParams, $
 	{
 		$scope.game = result;
 	});
-
+    
 	$scope.startGame = function()
 	{
 		var date = new Date();

@@ -1,0 +1,1 @@
+emit('prototype:state', this);
